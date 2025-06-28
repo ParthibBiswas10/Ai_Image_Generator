@@ -12,9 +12,12 @@ const ImageGen = () => {
       <div className="image-loader">
         <img src={defaultImage} alt="Default" className="default-image" />
       </div>
-      <div className="wrap-input-14">
-        <input className="input" type="text" placeholder="Search Here" />
-        <span className="focus-bg"></span>
+      <div className="searchbox">
+        <div className="wrap-input-14">
+          <input className="input" type="text" placeholder="Enter Prompt" />
+          <span className="focus-bg"></span>
+          <div className="btn">Search</div>
+        </div>
       </div>
     </div>
   );
