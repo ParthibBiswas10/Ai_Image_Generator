@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.header {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+#ImageText {
+  color: #e09f3e;
+  /*-webkit-text-stroke: 0.8px black;*/
+  text-shadow: 4px -2px 0 #151414, 2px -2px 0 #1d1c1c, -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+#GeneratorText {
+  color: #90caf9;
+  /*-webkit-text-stroke: 1px #294c60;*/
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+body {
+  background-color: #001f3f;
+}
+
+.wrap-input-14 {
+  width: 80%;
+  margin: 40px 3%;
+  position: relative;
+}
+
+.wrap-input-14 .input {
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  border: 1px solid #ccc;
+  background: transparent;
+  height: 36px;
+  padding: 7px 15px;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  color: black;
+}
+
+.wrap-input-14 .input:focus {
+  outline: none;
+}
+
+.wrap-input-14 .focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.wrap-input-14 .focus-bg:before,
+.wrap-input-14 .focus-bg:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  transition: 0.7s;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.wrap-input-14 .focus-bg:before {
+  left: 0;
+  top: 0;
+}
+
+.wrap-input-14 .focus-bg:after {
+  right: 0;
+  bottom: 0;
+}
+
+.wrap-input-14 .input:focus ~ .focus-bg:before,
+.wrap-input-14 .input:focus ~ .focus-bg:after {
+  width: 100%;
+  height: 100%;
+}
