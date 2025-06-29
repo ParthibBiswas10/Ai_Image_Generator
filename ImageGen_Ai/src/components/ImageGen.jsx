@@ -1,11 +1,17 @@
 import React from "react";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { useState, useEffect, useRef } from "react";
 import "./ImageGen.css";
 import defaultImage from "../assets/Default.png";
-const generateImage = () => {
-  console.log("Image generation triggered");
-};
-
 const ImageGen = () => {
+  const [imagesrc, setImageSrc] = useState(defaultImage);
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const inputref = useRef(null);
+
+  const generateImage = () => {
+    console.log("Image generation triggered");
+    console.log("Prompt:", inputref.current?.value);
+  };
   return (
     <div className="container">
       <div className="header">
@@ -18,7 +24,12 @@ const ImageGen = () => {
       </div>
       <div className="searchbox">
         <div className="wrap-input-14">
-          <input className="input" type="text" placeholder="Enter Prompt" />
+          <input
+            className="input"
+            type="text"
+            placeholder="Enter Prompt"
+            ref={inputref}
+          />
           <span className="focus-bg"></span>
           <div className="btn" onClick={generateImage}>
             Search
