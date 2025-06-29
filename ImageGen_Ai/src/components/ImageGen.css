@@ -38,6 +38,7 @@ body {
   width: 100%;
 }
 .btn {
+  transition: all 0.3s ease;
   background-color: #e09f3e;
   color: black;
   /* border: black 1px solid;*/
@@ -55,6 +56,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn:hover {
+  transform: translateY(-50%) scale(1.05);
+  background-color: #ff69b4;
 }
 .wrap-input-14 {
   width: 100%;
@@ -118,4 +124,86 @@ body {
 .wrap-input-14 .input:focus ~ .focus-bg:after {
   width: 100%;
   height: 100%;
+}
+
+.image-loader {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generated-image {
+  max-width: 400px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.loader {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  animation: pulse 1s infinite;
+}
+
+.loading-bar-container {
+  width: 100%;
+  max-width: 400px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 15px 0;
+  position: relative;
+}
+.image-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+}
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff69b4, #ff1493, #c2185b);
+  border-radius: 4px;
+  animation: loadingProgress 2s ease-in-out infinite;
+}
+
+@keyframes loadingProgress {
+  0% {
+    width: 0%;
+    opacity: 0.7;
+  }
+  50% {
+    width: 70%;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
