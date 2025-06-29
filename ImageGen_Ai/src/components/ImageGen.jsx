@@ -4,12 +4,13 @@ import defaultImage from "../assets/Default.png";
 const generateImage = () => {
   console.log("Image generation triggered");
 };
+
 const ImageGen = () => {
   return (
     <div className="container">
       <div className="header">
         <span id="ImageText">Image </span>
-        <span id="GeneratorText">Generator</span>
+        <span id="GeneratorText">Generator </span>
       </div>
 
       <div className="image-loader">
