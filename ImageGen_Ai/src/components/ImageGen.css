@@ -336,8 +336,6 @@
 @media (max-width: 480px) {
   .container {
     padding: 15px 10px;
-    margin-left: -10px;
-    transform: translateX(-10px);
   }
 
   .header {
@@ -353,7 +351,7 @@
 
   .searchbox {
     margin: 8px 0;
-    width: 100%;
+    width: 85%;
   }
 
   .wrap-input-14 {
@@ -363,13 +361,13 @@
 
   .wrap-input-14 .input {
     height: 42px;
-    padding: 5px 58pxx 10px;
+    padding: 10px 80px 10px 10px;
     font-size: 0.9rem;
     border-radius: 8px;
   }
 
   .btn {
-    height: 100px;
+    height: 38px;
     width: 70px;
     font-size: 0.8rem;
     padding: 6px 8px;
@@ -405,9 +403,6 @@
 @media (max-width: 375px) {
   .container {
     padding: 10px 8px;
-
-    margin-left: -8px;
-    transform: translateX(-8px);
   }
 
   .header {
@@ -442,8 +437,6 @@
 @media (max-width: 320px) {
   .container {
     padding: 8px 5px;
-    margin-left: -6px;
-    transform: translateX(-6px);
   }
 
   .header {
