@@ -20,6 +20,31 @@
   text-shadow: 4px -2px 0 #151414, 2px -2px 0 #1d1c1c, -2px 2px 0 #000,
     2px 2px 0 #000;
 }
+.download-btn {
+  background-color: #28a745;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(9, 16, 208, 0.2);
+}
+
+.download-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(192, 19, 19, 0.3);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 #GeneratorText {
   color: #90caf9;
@@ -32,8 +57,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 20px 0;
   width: 100%;
+  margin: 10px 0;
 }
 .btn {
   transition: all 0.3s ease;
@@ -62,7 +87,7 @@
 }
 .wrap-input-14 {
   width: 100%;
-  margin: 40px 3%;
+  margin: 15px 3%;
   position: relative;
   display: flex;
   align-items: center;

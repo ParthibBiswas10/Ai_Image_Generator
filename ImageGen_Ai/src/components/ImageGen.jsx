@@ -10,6 +10,24 @@ const ImageGen = () => {
   const key = import.meta.env.VITE_API_KEY;
   const inputref = useRef(null);
 
+  const downloadImage = (imageSrc) => {
+    try {
+      // Create a temporary link element
+      const link = document.createElement("a");
+      link.href = imageSrc;
+      link.download = `Parthib-Ai-Image-Generator.png`;
+
+      // Append to body, click, and remove
+      //document.body.appendChild(link);
+      console.log(link);
+      link.click();
+      //document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error downloading image:", error);
+      alert("Error downloading image. Please try again.");
+    }
+  };
+
   const generateImage = async () => {
     try {
       const prompt = inputref.current.value;
@@ -61,6 +79,15 @@ const ImageGen = () => {
               <div className="loading-bar"></div>
             </div>
           </div>
+        )}
+
+        {ImageSrc !== defaultImage && !loading && (
+          <button
+            className="download-btn"
+            onClick={() => downloadImage(ImageSrc)}
+          >
+            Download Image
+          </button>
         )}
       </div>
 

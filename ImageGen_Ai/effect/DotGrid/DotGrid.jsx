@@ -38,8 +38,8 @@ const DotGrid = ({
   shockRadius = 250,
   shockStrength = 20,
   maxSpeed = 1000,
-  resistance = 140,
-  returnDuration = 1.5,
+  resistance = 50,
+  returnDuration = 3,
   className = "",
   style,
 }) => {
