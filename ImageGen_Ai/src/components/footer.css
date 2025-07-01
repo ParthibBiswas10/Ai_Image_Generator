@@ -1,0 +1,25 @@
+.social-item {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  top: 11px;
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #59b1e1, 0 0 20px #166088, 0 0 30px #003049;
+  }
+  100% {
+    box-shadow: 0 0 20px #1a597b, 0 0 40px #003049, 0 0 40px #003049;
+  }
+}
+i {
+  color: white;
+  font-size: 45px;
+}
+a:hover {
+  transform: rotate(155deg);
+}
+a:hover i {
+  transform: rotate(-155deg); /* Counter-rotate the icon to stay fixed */
+}
