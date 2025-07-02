@@ -11,7 +11,7 @@ const Footer = () => {
 
       <div className="social-item">
         <a
-          href="https://www.instagram.com/messian_muggle10/?hl=en"
+          href="https://www.instagram.com/parthib.env/?hl=en"
           target="_blank"
           rel="noopener noreferrer"
           title="Instagram"
