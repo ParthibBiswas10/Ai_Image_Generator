@@ -5,6 +5,7 @@
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
+  width: 100%;
   box-sizing: border-box;
 }
 .header {
@@ -13,12 +14,60 @@
   color: white;
   margin-bottom: 20px;
   text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Blur Text Effect Styles */
+.blur-char {
+  opacity: 0;
+  filter: blur(10px);
+  animation: blurToFocus 1.5s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.blur-char:hover {
+  filter: blur(0px);
+  transform: scale(1.1);
+  text-shadow: 0 0 20px currentColor;
+}
+
+@keyframes blurToFocus {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0.5;
+    filter: blur(5px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
 }
 #ImageText {
   color: #e09f3e;
   /*-webkit-text-stroke: 0.8px black;*/
   text-shadow: 4px -2px 0 #151414, 2px -2px 0 #1d1c1c, -2px 2px 0 #000,
     2px 2px 0 #000;
+}
+
+#ImageText .blur-char {
+  color: #f6f3ef;
+}
+
+#GeneratorText {
+  color: #90caf9;
+  /*-webkit-text-stroke: 1px #294c60;*/
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+#GeneratorText .blur-char {
+  color: #90caf9;
 }
 .download-btn {
   background-color: #28a745;
@@ -44,13 +93,6 @@
 .download-btn:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-#GeneratorText {
-  color: #90caf9;
-  /*-webkit-text-stroke: 1px #294c60;*/
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
-    2px 2px 0 #000;
 }
 
 .searchbox {
@@ -295,8 +337,8 @@
   }
 
   .header {
-    font-size: clamp(1.5rem, 7vw, 2.5rem);
-    margin-bottom: 15px;
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 20px;
   }
 
   .searchbox {
@@ -339,8 +381,8 @@
   }
 
   .header {
-    font-size: clamp(1.3rem, 8vw, 2rem);
-    margin-bottom: 10px;
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+    margin-bottom: 15px;
   }
 
   #ImageText,
@@ -406,8 +448,8 @@
   }
 
   .header {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
+    font-size: clamp(1.6rem, 8vw, 2rem);
+    margin-bottom: 12px;
   }
 
   .wrap-input-14 .input {
@@ -440,7 +482,8 @@
   }
 
   .header {
-    font-size: 1.3rem;
+    font-size: clamp(1.4rem, 7vw, 1.8rem);
+    margin-bottom: 10px;
   }
 
   .wrap-input-14 .input {
@@ -491,8 +534,8 @@
   }
 
   .header {
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-    margin-bottom: 8px;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    margin-bottom: 12px;
   }
 
   .image-loader {

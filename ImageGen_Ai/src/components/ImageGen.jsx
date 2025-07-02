@@ -10,6 +10,21 @@ const ImageGen = () => {
   const key = import.meta.env.VITE_API_KEY;
   const inputref = useRef(null);
 
+  // FuNCtion to create blur text effect
+  const createBlurText = (text, className) => {
+    return text.split("").map((char, index) => (
+      <span
+        className={`blur-char ${className}`}
+        style={{
+          animationDelay: `${index * 0.2}s`,
+          display: char === " " ? "inline" : "inline-block",
+        }}
+      >
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ));
+  };
+  //Blur Text end
   const downloadImage = (imageSrc) => {
     try {
       // Create a temporary link element
@@ -66,8 +81,10 @@ const ImageGen = () => {
   return (
     <div className="container">
       <div className="header">
-        <span id="ImageText">Image </span>
-        <span id="GeneratorText">Generator </span>
+        <span id="ImageText">{createBlurText("Image ", "image-blur")}</span>
+        <span id="GeneratorText">
+          {createBlurText("Generator ", "generator-blur")}
+        </span>
       </div>
 
       <div className="image-loader">

@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import ImageGen from "./components/ImageGen";
+import ImageGen from "./components/ImageGen.jsx";
 import Particles from "../effect/Particles/Particles";
-import Footer from "./components/footer";
+import Footer from "./components/footer.jsx";
+
 function App() {
   return (
     <div
       style={{
         position: "relative",
         width: "100%",
-        height: "100vh",
-        overflow: "hidden",
+        minHeight: "100vh",
+        overflow: "auto",
       }}
     >
       <Particles
@@ -26,7 +27,9 @@ function App() {
       <div style={{ position: "relative", zIndex: 100 }}>
         <ImageGen />
       </div>
-      <Footer />
+      <div style={{ position: "relative", zIndex: 100 }}>
+        <Footer />
+      </div>
     </div>
   );
 }

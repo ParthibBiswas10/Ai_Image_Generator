@@ -1,43 +1,46 @@
 import React from "react";
+import "./footer.css";
+// import BlurText from "../../BlurText/BlurText.jsx";
 
-const footer = () => {
+const Footer = () => {
   return (
-    <>
-      <div class="patterns">
-        <svg width="100%" height="30px">
-          <defs>
-            <style>
-              @import url("https://fonts.googleapis.com/css?
-              family=Lora:400,400i,700,700i");
-            </style>
-          </defs>
-          <text x="50%" y="100%" text-anchor="middle">
-            CONNECT ME WITH
-          </text>
-        </svg>
+    <div className="footer-container">
+      <div className="patterns">
+        <h2 className="footer-title animated-text">CONNECT WITH ME</h2>
       </div>
-      <div class="social-item">
-        <a href="https://www.facebook.com/parthib.biswas.31924">
-          <i class="fa-brands fa-facebook"></i>
+
+      <div className="social-item">
+        <a
+          href="https://www.instagram.com/messian_muggle10/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Instagram"
+        >
+          <i className="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://www.instagram.com/messian_muggle10/?hl=en">
-          <i class="fa-brands fa-instagram"></i>
+        <a
+          href="https://www.linkedin.com/in/parthib-biswas-79b06029b/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+        >
+          <i className="fa-brands fa-linkedin"></i>
         </a>
-        <a href="https://www.linkedin.com/in/parthib-biswas-79b06029b/">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/ParthibBiswas10">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://x.com/ParthibMessi10">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="https://in.pinterest.com/parthiblm10/">
-          <i class="fa-brands fa-pinterest"></i>
+        <a
+          href="https://github.com/ParthibBiswas10"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub"
+        >
+          <i className="fa-brands fa-github"></i>
         </a>
       </div>
-    </>
+
+      <div className="footer-text">
+        <p>&copy; 2025 Parthib Biswas | AI Image Generator</p>
+      </div>
+    </div>
   );
 };
 
-export default footer;
+export default Footer;
