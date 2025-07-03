@@ -38,7 +38,13 @@ function App() {
         />
       </div>
 
-      <div style={{ position: "relative", zIndex: 10 }}>
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          pointerEvents: "auto",
+        }}
+      >
         <ImageGen />
       </div>
       <div style={{ position: "relative", zIndex: 10 }}>
