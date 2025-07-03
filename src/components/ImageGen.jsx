@@ -30,7 +30,7 @@ const ImageGen = () => {
     try {
       const link = document.createElement("a");
       link.href = imageSrc;
-      link.download = `Parthib-Ai-Image.png`;
+      link.download = `Parthib-Ai-Generated-Image-.png`;
 
       document.body.appendChild(link);
       link.click();
