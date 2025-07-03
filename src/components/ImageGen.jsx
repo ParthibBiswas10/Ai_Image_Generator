@@ -30,7 +30,7 @@ const ImageGen = () => {
     try {
       const link = document.createElement("a");
       link.href = imageSrc;
-      const date = new Date().toLocaleDateString().replace(/\//g, "-");
+      const date = new Date().toLocaleDateString();
       const randomId = Math.floor(Math.random() * 1000);
       link.download = `Parthib-Ai-Generated-Image-${date}-${randomId}.png`;
 
