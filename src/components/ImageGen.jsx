@@ -30,7 +30,7 @@ const ImageGen = () => {
     try {
       const link = document.createElement("a");
       link.href = imageSrc;
-      link.download = `Parthib-Ai-Generated-Image-.png`;
+      link.download = "Parthib-Ai-Generated-Image.png";
 
       document.body.appendChild(link);
       link.click();
@@ -146,7 +146,7 @@ const ImageGen = () => {
           </div>
         )}
 
-        {ImageSrc !== defaultImage && !loading && (
+        {ImageSrc === defaultImage && !loading && (
           <button
             className="download-btn"
             onClick={() => downloadImage(ImageSrc)}
