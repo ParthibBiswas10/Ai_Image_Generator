@@ -17,13 +17,19 @@ A modern, interactive AI-powered image generator built with React and Google Gem
 - 💾 **Download Feature**: Save generated images directly to your device
 - 🔒 **Secure**: Environment-based API key management
 
-## 🚀 Demo
-
-[Live Demo](https://your-deployed-app.vercel.app) _(Replace with your actual deployment URL)_
-
 ## 📸 Screenshots
 
-_(Add screenshots of your application here)_
+### Desktop View
+
+![AI Image Generator Desktop](src/assets/Screenshot%202025-07-03%20145558.png)
+
+### Mobile Responsive Design
+
+![AI Image Generator Mobile](src/assets/Screenshot%202025-07-03%20145610.png)
+
+### Image Generation in Action
+
+![AI Image Generation Process](src/assets/Screenshot%202025-07-03%20145650.png)
 
 ## 🛠️ Tech Stack
 
