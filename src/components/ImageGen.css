@@ -112,13 +112,14 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 3;
-  height: 100% !important;
+  height: 48px;
   width: 100px;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
+  box-sizing: border-box;
 }
 
 .btn:hover {
@@ -320,7 +321,8 @@
   .btn {
     width: 90px;
     font-size: 0.9rem;
-    height: 100% !important;
+    height: 100%;
+    right: 0.1px;
   }
 
   .wrap-input-14 .input {
@@ -360,10 +362,10 @@
   }
 
   .btn {
-    height: 100% !important;
     width: 80px;
     font-size: 0.85rem;
-    right: 3px;
+    height: 100%;
+    right: 0.1px;
   }
 
   .generated-image {
@@ -410,12 +412,13 @@
   }
 
   .btn {
-    height: 100% !important;
+    height: 100%;
+    right: 0.1px;
     width: 70px;
     font-size: 0.8rem;
     padding: 0px 6px;
     border-radius: 0 6px 6px 0;
-    right: 0.1px;
+
     box-sizing: border-box;
   }
 
@@ -463,7 +466,8 @@
   }
 
   .btn {
-    height: 100% !important;
+    height: 100%;
+    right: 0.1px;
     width: 60px;
     font-size: 0.75rem;
     padding: 0px 4px;
