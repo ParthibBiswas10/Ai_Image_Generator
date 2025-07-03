@@ -30,7 +30,8 @@ const ImageGen = () => {
     try {
       const link = document.createElement("a");
       link.href = imageSrc;
-      link.download = "Parthib-Ai-Generated-Image.png";
+      const date = new Date().toLocaleDateString().replace(/\//g, "-");
+      link.download = `Parthib-Ai-Generated-Image-${date}-0.png`;
 
       document.body.appendChild(link);
       link.click();
