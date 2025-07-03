@@ -146,7 +146,7 @@ const ImageGen = () => {
           </div>
         )}
 
-        {ImageSrc === defaultImage && !loading && (
+        {ImageSrc !== defaultImage && !loading && (
           <button
             className="download-btn"
             onClick={() => downloadImage(ImageSrc)}
