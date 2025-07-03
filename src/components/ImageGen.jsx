@@ -31,7 +31,7 @@ const ImageGen = () => {
       // Create a temporary link element
       const link = document.createElement("a");
       link.href = imageSrc;
-      link.download = `ai-generated-image-${Date.now()}.png`;
+      link.download = `Parthib-Ai-Image.png`;
 
       // Append to body, click, and remove
       document.body.appendChild(link);
