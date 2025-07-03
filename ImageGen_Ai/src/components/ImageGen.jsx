@@ -10,10 +10,11 @@ const ImageGen = () => {
   const key = import.meta.env.VITE_GEMINI_API_KEY;
   const inputref = useRef(null);
 
-  // FuNCtion to create blur text effect
+  // Function to create blur text effect
   const createBlurText = (text, className) => {
     return text.split("").map((char, index) => (
       <span
+        key={index}
         className={`blur-char ${className}`}
         style={{
           animationDelay: `${index * 0.2}s`,
@@ -24,19 +25,18 @@ const ImageGen = () => {
       </span>
     ));
   };
-  //Blur Text end
+
   const downloadImage = (imageSrc) => {
     try {
       // Create a temporary link element
       const link = document.createElement("a");
       link.href = imageSrc;
-      link.download = `Parthib-Ai-Image-Generator.png`;
+      link.download = `ai-generated-image-${Date.now()}.png`;
 
       // Append to body, click, and remove
-      //document.body.appendChild(link);
-      console.log(link);
+      document.body.appendChild(link);
       link.click();
-      //document.body.removeChild(link);
+      document.body.removeChild(link);
     } catch (error) {
       console.error("Error downloading image:", error);
       alert("Error downloading image. Please try again.");
@@ -45,7 +45,7 @@ const ImageGen = () => {
 
   const generateImage = async () => {
     try {
-      const prompt = inputref.current.value;
+      const prompt = inputref.current.value.trim();
       if (!prompt) {
         alert("Please enter a prompt to generate an image.");
         return;
@@ -66,7 +66,7 @@ const ImageGen = () => {
       const api = new GoogleGenAI({ apiKey: key });
 
       const response = await api.models.generateContent({
-        model: "models/gemini-1.5-flash",
+        model: "gemini-2.0-flash-preview-image-generation",
         contents: [{ text: prompt }],
         config: {
           responseModalities: [Modality.TEXT, Modality.IMAGE],
@@ -111,6 +111,9 @@ const ImageGen = () => {
         errorMessage += "Invalid API key.";
       } else if (error.message?.includes("quota")) {
         errorMessage += "API quota exceeded.";
+      } else if (error.message?.includes("SAFETY")) {
+        errorMessage +=
+          "Content blocked for safety reasons. Try a different prompt.";
       } else if (
         error.message?.includes("network") ||
         error.message?.includes("fetch")

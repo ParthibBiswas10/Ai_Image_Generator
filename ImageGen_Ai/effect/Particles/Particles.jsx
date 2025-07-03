@@ -80,13 +80,13 @@ const fragment = /* glsl */ `
 `;
 
 const Particles = ({
-  particleCount = 800,
+  particleCount = 200,
   particleSpread = 10,
   speed = 0.5,
   particleColors,
-  moveParticlesOnHover = false,
+  moveParticlesOnHover = true,
   particleHoverFactor = 1,
-  alphaParticles = false,
+  alphaParticles = true,
   particleBaseSize = 100,
   sizeRandomness = 1,
   cameraDistance = 20,
@@ -102,7 +102,6 @@ const Particles = ({
 
     const renderer = new Renderer({ depth: false, alpha: true });
     const gl = renderer.gl;
-    gl.canvas.className = "particles-canvas";
     container.appendChild(gl.canvas);
     gl.clearColor(0, 0, 0, 0);
 
@@ -119,13 +118,14 @@ const Particles = ({
     resize();
 
     const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth) * 2 - 1;
-      const y = -((e.clientY / window.innerHeight) * 2 - 1);
+      const rect = container.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
       mouseRef.current = { x, y };
     };
 
     if (moveParticlesOnHover) {
-      window.addEventListener("mousemove", handleMouseMove);
+      container.addEventListener("mousemove", handleMouseMove);
     }
 
     const count = particleCount;
@@ -211,7 +211,7 @@ const Particles = ({
     return () => {
       window.removeEventListener("resize", resize);
       if (moveParticlesOnHover) {
-        window.removeEventListener("mousemove", handleMouseMove);
+        container.removeEventListener("mousemove", handleMouseMove);
       }
       cancelAnimationFrame(animationFrameId);
       if (container.contains(gl.canvas)) {
