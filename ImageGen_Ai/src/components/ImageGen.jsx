@@ -7,7 +7,7 @@ const ImageGen = () => {
   const [ImageSrc, setImageSrc] = useState(defaultImage);
   const [loading, setLoading] = useState(false);
 
-  const key = import.meta.env.VITE_API_KEY;
+  const key = import.meta.env.VITE_GEMINI_API_KEY;
   const inputref = useRef(null);
 
   // FuNCtion to create blur text effect
