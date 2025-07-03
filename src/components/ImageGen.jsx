@@ -31,7 +31,8 @@ const ImageGen = () => {
       const link = document.createElement("a");
       link.href = imageSrc;
       const date = new Date().toLocaleDateString().replace(/\//g, "-");
-      link.download = `Parthib-Ai-Generated-Image-${date}-0.png`;
+      const randomId = Math.floor(Math.random() * 1000);
+      link.download = `Parthib-Ai-Generated-Image-${date}-${randomId}.png`;
 
       document.body.appendChild(link);
       link.click();
