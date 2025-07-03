@@ -66,7 +66,7 @@ const ImageGen = () => {
       const api = new GoogleGenAI({ apiKey: key });
 
       const response = await api.models.generateContent({
-        model: "gemini-2.0-flash-preview-image-generation",
+        model: "models/gemini-1.5-flash",
         contents: [{ text: prompt }],
         config: {
           responseModalities: [Modality.TEXT, Modality.IMAGE],
