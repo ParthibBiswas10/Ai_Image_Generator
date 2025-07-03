@@ -28,12 +28,10 @@ const ImageGen = () => {
 
   const downloadImage = (imageSrc) => {
     try {
-      // Create a temporary link element
       const link = document.createElement("a");
       link.href = imageSrc;
       link.download = `Parthib-Ai-Image.png`;
 
-      // Append to body, click, and remove
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -51,7 +49,6 @@ const ImageGen = () => {
         return;
       }
 
-      // Check if API key is available
       if (!key) {
         console.error("API key is missing");
         alert(

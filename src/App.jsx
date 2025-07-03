@@ -15,7 +15,6 @@ function App() {
         backgroundColor: "black",
       }}
     >
-      {/* Particles background with proper z-index */}
       <div
         style={{
           position: "fixed",
