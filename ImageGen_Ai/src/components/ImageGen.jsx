@@ -51,7 +51,18 @@ const ImageGen = () => {
         return;
       }
 
+      // Check if API key is available
+      if (!key) {
+        console.error("API key is missing");
+        alert(
+          "API key is not configured. Please check your environment variables."
+        );
+        return;
+      }
+
+      console.log("Starting image generation...");
       setLoading(true);
+
       const api = new GoogleGenAI({ apiKey: key });
 
       const response = await api.models.generateContent({
@@ -62,17 +73,54 @@ const ImageGen = () => {
         },
       });
 
+      console.log("Response received:", response);
+
+      if (!response.candidates || response.candidates.length === 0) {
+        throw new Error("No candidates returned from API");
+      }
+
       const parts = response.candidates[0].content.parts;
+      console.log("Parts received:", parts);
+
+      let imageFound = false;
       for (const part of parts) {
         if (part.inlineData) {
           const base64 = part.inlineData.data;
           setImageSrc(`data:image/png;base64,${base64}`);
           inputref.current.value = ""; // Clear the input field after generation
+          imageFound = true;
+          console.log("Image generated successfully");
+          break;
         }
       }
+
+      if (!imageFound) {
+        throw new Error("No image data found in response");
+      }
     } catch (error) {
-      console.error("Error generating image:", error);
-      alert("Error generating image. Please try again.");
+      console.error("Detailed error information:", {
+        message: error.message,
+        stack: error.stack,
+        name: error.name,
+        cause: error.cause,
+      });
+
+      let errorMessage = "Error generating image. ";
+
+      if (error.message?.includes("API key")) {
+        errorMessage += "Invalid API key.";
+      } else if (error.message?.includes("quota")) {
+        errorMessage += "API quota exceeded.";
+      } else if (
+        error.message?.includes("network") ||
+        error.message?.includes("fetch")
+      ) {
+        errorMessage += "Network error. Please check your connection.";
+      } else {
+        errorMessage += "Please try again or check the console for details.";
+      }
+
+      alert(errorMessage);
     } finally {
       setLoading(false);
     }
