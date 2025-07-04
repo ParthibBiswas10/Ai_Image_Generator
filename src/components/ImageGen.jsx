@@ -168,7 +168,7 @@ const ImageGen = () => {
           />
           <span className="focus-bg"></span>
           <div className="btn" onClick={generateImage}>
-            Search
+            GO
           </div>
         </div>
       </div>
