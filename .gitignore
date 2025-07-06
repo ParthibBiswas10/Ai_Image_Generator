@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 #env files
 .env
+
+# Effect folder
+effect/
